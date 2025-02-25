@@ -14,7 +14,7 @@ def leaderboard(): #leaderboard function
     if len(names)>10:
         inc=0
         for i in range(10):
-            print(10-(i-1),":",names[i]][inc+1],"  ",names[i][inc])
+            print (10-(i-1),":",names[i][inc+1],"  ",names[i][inc])
             inc +=2
     else:
         inc=0
