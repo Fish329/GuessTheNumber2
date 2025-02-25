@@ -1,7 +1,7 @@
 import random
 def leaderboard():
     names=[]
-    f=open("Chrysscores.txt","r")
+    f=open("ChrysScores.txt","r")
     funclist=f.read().split(",")
     print(funclist)
     print(len(funclist
@@ -25,7 +25,7 @@ print("""
 ╨ ╨ ╚═╝ ╨ ╨ ╚═╝ ╚══ ╨
 With Smiley Sam! ☺
 """)
-f = open("Chrysscores.txt","r")
+f = open("ChrysScores.txt","r")
 input("Press Enter to start!")
 print("\n")
 print("☺ Hello! My name is Smiley Sam!")
@@ -58,9 +58,9 @@ print("☺ That's the one!")
 print("")
 decision=input("☺ Well done! Want me to save your score? (y/n)")
 if decision == "y" or decision == "Y":
-    with open("Chrysscores.txt", "a") as f:
+    with open("ChrysScores.txt", "a") as f:
         if not familiar:
-            r=open("Chrysscores.txt","r")
+            r=open("ChrysScores.txt","r")
             if len(r.read())!=0:
                 f.write(",")
             f.write(str(100-guesses+1))
