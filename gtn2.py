@@ -9,7 +9,17 @@ def leaderboard(): #leaderboard function
         funclist.pop(0)
         funclist.pop(0)
     names.sort(reverse=True)
-    print (names)
+    print(names)
+    print ("GRANDEST GUESSERS:") #TODO: make the leaderboard work correctly
+    if len(names)>10:
+        inc=0
+        for i in range(10):
+            print(10-(i-1),":",names[i]][inc+1],"  ",names[i][inc])
+            inc +=2
+    else:
+        inc=0
+        for i in range(len(names)):
+            print(len(names)-(i-1),":",names[i][inc+1],"  ",names[i][inc])
 
 print(""" 
 ╔═╡ ╥ ╥ ╔══ ╔═╡ ╔═╡
@@ -23,6 +33,10 @@ print("""
 ╨ ╨ ╚═╝ ╨ ╨ ╚═╝ ╚══ ╨
 With Smiley Sam! ☺
 """) #logo
+try: #Create ChrysScores file if it doesnt exist yet
+    t=open("ChrysScores.txt","r")
+except:
+    t=open("ChrysScores.txt","w")
 f = open("ChrysScores.txt","r") #prepare to read existing players
 input("Press Enter to start!")
 print("\n")
@@ -67,7 +81,7 @@ if decision == "y" or decision == "Y":
             list = f.read().split(",")
             if int(list[list.index(yourName)-1])<100-guesses+1: #update their score if it's higher than the previous one
                 list[list.index(yourName)-1]=100-guesses+1
-                g=open("ChrysScore.txt","w")
+                g=open("ChrysScores.txt","w")
                 g.write("")
                 f=open("ChrysScores.txt","a")
                 for i in list: #convert list back to text file
