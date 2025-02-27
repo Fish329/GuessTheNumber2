@@ -1,15 +1,15 @@
 import random
-names=[]
-familiar=False
+names=[] #list for leaderboard function
+familiar=False #flag for if the player has played before
 def leaderboard(): #leaderboard function
     
     f=open("ChrysScores.txt","r")
     funclist=f.read().split(",")
-    for i in range(int(len(funclist)/2)):
-        names.append([int(funclist[0]),str(funclist[1])])
+    for i in range(int(len(funclist)/2)): #Put names from text file into a list
+        names.append([int(funclist[0]),str(funclist[1])]) 
         funclist.pop(0)
         funclist.pop(0)
-    names.sort(reverse=True)
+    names.sort(reverse=True) #Sort list by highest score
     if len(names)==0:
         return
     print("")
