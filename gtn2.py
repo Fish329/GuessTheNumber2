@@ -82,7 +82,7 @@ while True: #main loop
             print("")
     print("☺ That's the one!")
     print("")
-    Print("☺ You got",100-guesses+1,"points!")
+    print("☺ You got",100-guesses+1,"points!")
     user1.assign_score(100-guesses+1) #assign player score
     decision=input("☺ Well done! Want me to save your score? (y/n)")
     if decision == "y" or decision == "Y":
