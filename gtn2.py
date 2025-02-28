@@ -2,7 +2,7 @@ import random
 names=[] #list for leaderboard function
 familiar=False #flag for if the player has played before
 def leaderboard(): #leaderboard function
-    
+    names=[] #reset names list
     f=open("ChrysScores.txt","r")
     funclist=f.read().split(",")
     for i in range(int(len(funclist)/2)): #Put names from text file into a list
@@ -24,16 +24,8 @@ def leaderboard(): #leaderboard function
             for i in range(len(names)):
                 print(i+1,":",names[i][0],"  ",names[i][1])
 
-class User: #User class stuff
-
-    def __init__(self, name, score):
-        self.name = name
-        self.score = score
-
-    def assign_score(self, score):
-        self.score = score
-
 while True: #main loop
+
     print(""" 
     ╔═╡ ╥ ╥ ╔══ ╔═╡ ╔═╡
     ║ ╗ ║ ║ ╠══ ╚═╗ ╚═╗
@@ -55,7 +47,6 @@ while True: #main loop
     print("\n")
     print("☺ Hello! My name is Smiley Sam!") #ask player's name
     yourName=input("What's your name? ")
-    user1=User(yourName, 0) #create user object
     list = f.read().split(",")
     if yourName in list: #greet depending on if a score has already been saved for this person
         print("☺ Oh! Welcome back!")
@@ -80,10 +71,9 @@ while True: #main loop
             print("☺ Nope!")
             print("☺ My number is higher!")
             print("")
-    print("☺ That's the one!")
+    print("☺ That's the one!") #when game is won
     print("")
     print("☺ You got",100-guesses+1,"points!")
-    user1.assign_score(100-guesses+1) #assign player score
     decision=input("☺ Well done! Want me to save your score? (y/n)")
     if decision == "y" or decision == "Y":
         
@@ -92,16 +82,15 @@ while True: #main loop
                 r=open("ChrysScores.txt","r")
                 if len(r.read())!=0:
                     f.write(",")
-                f.write(str(user1.score))
+                f.write(str(100-guesses+1))
                 f.write(",")
-                f.write(user1.name)
+                f.write(yourName)
             else: #If the player has played before
                 f=open("ChrysScores.txt","r")
                 list = f.read().split(",")
-                if int(list[list.index(user1.name)-1])<user1.score: #update their score if it's higher than the previous one
-                    list[list.index(user1.name)-1]=user1.score
+                if int(list[list.index(yourName)-1])<100-guesses+1: #update their score if it's higher than the previous one
+                    list[list.index(yourName)-1]=100-guesses+1
                     g=open("ChrysScores.txt","w")
-                    g.write("")
                     f=open("ChrysScores.txt","a")
                     for i in list: #convert list back to text file
                         f.write(str(i))
