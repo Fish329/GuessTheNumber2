@@ -58,7 +58,7 @@ while True: #main loop
     print("☺ Let's play Guess the Number!")
     number=random.randrange(1,100) #generate number
     guesses=0
-    print("☺ I'm thinking of a number between 1 and 100. Can you guess what it is?")
+    print("☺ I'm thinking of a whole number between 1 and 100. Can you guess what it is?")
     while True: #Game logic
         guesses += 1 #increase attempt count
         yourGuess=int(input("☺ What's your guess? "))
