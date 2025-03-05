@@ -11,7 +11,8 @@ def leaderboard(): #leaderboard function
         funclist.pop(0)
     names.sort(reverse=True) #Sort list by highest score
     if len(names)==0: #If the leaderboard is empty, dont print it
-        print("if there were any names in the leaderboard, it would ")
+        print("if there were any names in the leaderboard, it would be here")
+        break
     print("")
     print ("-+=GRANDEST GUESSERS:=+-") #leaderboard title
     if len(names)>10: #Draw leaderboard
