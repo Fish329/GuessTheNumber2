@@ -43,6 +43,8 @@ while True: #main loop
     except:
         t=open("ChrysScores.txt","w")
     f = open("ChrysScores.txt","r") #prepare to read existing players
+    leaderboard()
+    print("")
     input("Press Enter to start!")
     print("\n")
     print("☺ Hello! My name is Smiley Sam!") #ask player's name
