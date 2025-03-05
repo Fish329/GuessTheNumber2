@@ -11,7 +11,7 @@ def leaderboard(): #leaderboard function
         funclist.pop(0)
     names.sort(reverse=True) #Sort list by highest score
     if len(names)==0: #If the leaderboard is empty, dont print it
-        return
+        print("if there were any names in the leaderboard, it would ")
     print("")
     print ("-+=GRANDEST GUESSERS:=+-") #leaderboard title
     if len(names)>10: #Draw leaderboard
@@ -43,9 +43,13 @@ while True: #main loop
     except:
         t=open("ChrysScores.txt","w")
     f = open("ChrysScores.txt","r") #prepare to read existing players
-    leaderboard()
-    print("")
-    input("Press Enter to start!")
+    while True:
+        pressStart=input("S to start, LB for leaderboard, X to exit ")
+        if pressStart=="LB": leaderboard()
+        elif pressStart=="X": quit()
+        elif pressStart=="S": break
+        else: print("ERROR. Please choose from the list of inputs given.")
+
     print("\n")
     print("☺ Hello! My name is Smiley Sam!") #ask player's name
     yourName=input("What's your name? ")
