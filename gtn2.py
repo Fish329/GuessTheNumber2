@@ -12,7 +12,7 @@ def leaderboard(): #leaderboard function
     names.sort(reverse=True) #Sort list by highest score
     if len(names)==0: #If the leaderboard is empty, dont print it
         print("if there were any names in the leaderboard, it would be here")
-        break
+        return
     print("")
     print ("-+=GRANDEST GUESSERS:=+-") #leaderboard title
     if len(names)>10: #Draw leaderboard
